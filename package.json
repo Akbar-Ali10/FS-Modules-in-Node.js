@@ -1,0 +1,16 @@
+{
+  "name": "myfolder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "express": "^4.21.2"
+  }
+}
