@@ -1,23 +1,37 @@
-
-
-
 const fs = require("fs");
-const path = require("path");
 
-// Write data to 'ali.txt'
-const fileName = "ali.txt";
-const data = "my name is ali";
-fs.writeFileSync(fileName, data, "utf-8");
+// Step 1: Write File
+fs.writeFile("example.txt", "Yeh nayi file ka data hai.", (err) => {
+  if (err) {
+    console.error("Error writing file:", err);
+  } else {
+    console.log("File created and data written successfully!");
 
-// Append data to 'example.txt'
-const filepath = "example.txt";
-fs.appendFileSync(filepath, "this is new data", "utf-8");
-console.log("Data appended successfully.");
+    // Step 2: Rename File
+    fs.rename("example.txt", "newname.txt", (err) => {
+      if (err) {
+        console.error("Error renaming file:", err);
+      } else {
+        console.log("File renamed successfully!");
 
-// Read and display the content of 'example.txt'
-const readFile = fs.readFileSync(filepath, "utf-8");
-console.log(readFile);
+        // Step 3: Update File
+        fs.appendFile("newname.txt", "\nYeh updated data hai.", (err) => {
+          if (err) {
+            console.error("Error updating file:", err);
+          } else {
+            console.log("File updated successfully!");
 
-// Rewrite data to 'ali.txt'
-fs.writeFileSync(fileName, data, "utf-8");
-console.log("Data written to ali.txt successfully.");
+            // Step 4: Delete File
+            fs.unlink("newname.txt", (err) => {
+              if (err) {
+                console.error("Error deleting file:", err);
+              } else {
+                console.log("File deleted successfully!");
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+});

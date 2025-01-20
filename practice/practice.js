@@ -121,15 +121,43 @@
 // fs.writeFile(filepath, "This is my new file", "utf-8", (err) =>{
 //     if (err) console.error(err);
 //     else console.log("saved ha ");
-    
-    
-    
 // })
 
+// // Write data to 'ali.txt'
+// const fileName = "ali.txt";
+// const data = "my name is ali";
+// fs.writeFileSync(fileName, data, "utf-8");
+
+// // Append data to 'example.txt'
+// const filepath = "example.txt";
+// fs.appendFileSync(filepath, "this is new data", "utf-8");
+// console.log("Data appended successfully.");
+
+// // Read and display the content of 'example.txt'
+// const readFile = fs.readFileSync(filepath, "utf-8");
+// console.log(readFile);
+
+// // Rewrite data to 'ali.txt'
+// fs.writeFileSync(fileName, data, "utf-8");
+// console.log("Data written to ali.txt successfully.");
 
 
+// const fileName = __dirname;  Current directory path
 
+// fs.promises.readdir(file)
+//     .then((data) => console.log("Files in directory:", data))
+//     .catch((err) => console.error("Error reading directory:", err));
 
+// const { error } = require("console");
+// const fs = require("fs");
+// const path = require("path");
+
+// const unlink = "akbar.txt"
+
+// fs.promises
+// .unlink(unlink, "this is new data",  "utf-8")
+// .then( console.log('data'))
+// .catch((error) => console.log(error))
 
 
 
